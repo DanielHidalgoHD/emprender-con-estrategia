@@ -34,6 +34,39 @@ h2{font-family:var(--ff);font-weight:700;color:var(--bg);font-size:clamp(23px,2.
 .h-rule{border-left:3px solid var(--gold);padding-left:22px;margin-bottom:10px}
 .sublead{font-size:15px;color:var(--mut);margin-bottom:28px;max-width:640px}
 
+
+/* INTRO EDITORIAL */
+.intro{padding:66px 0 46px}
+.kicker{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px}
+.big{font-size:clamp(30px,4.5vw,50px);line-height:1.12;font-weight:700;color:var(--bg);max-width:860px;letter-spacing:-.015em}
+.big em{font-style:italic;font-weight:400;color:var(--gold)}
+.big .ul{background:linear-gradient(transparent 66%,rgba(224,174,85,.5) 66%);padding:0 2px}
+.hook{font-size:18px;line-height:1.6;max-width:760px;margin-top:22px}
+.cta{display:inline-flex;align-items:center;gap:12px;margin-top:26px;font-size:17px;font-weight:700;color:var(--bg);text-decoration:none;position:relative;padding-bottom:6px}
+.cta::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold);border-radius:2px;transform-origin:left;transition:transform .3s}
+.cta:hover::after{transform:scaleX(.6)}
+.cta .b{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--bg);color:#fff;font-size:16px;transition:transform .3s,background .3s}
+.cta:hover .b{transform:translateX(5px) rotate(-30deg);background:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.stat{position:relative;padding:26px 22px 22px;border-radius:6px;min-height:220px;display:flex;flex-direction:column;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.stat:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(87,31,48,.14)}
+.stat .n{font-size:clamp(42px,4.6vw,58px);font-weight:700;line-height:1;letter-spacing:-.03em}
+.stat .t{font-size:14px;line-height:1.45;margin-top:14px;flex:1}
+.stat .s{font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:18px;opacity:.72;font-weight:700}
+.stat .ar{position:absolute;top:14px;right:14px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.s1{background:var(--bg);color:#fff} .s1 .ar{background:#fff;color:var(--bg)}
+.s2{background:var(--gold);color:#2E2A26} .s2 .ar{background:#2E2A26;color:var(--gold-l)}
+.s3{background:#F3DFE5;color:var(--bg)} .s3 .ar{background:var(--bg);color:#fff}
+.s4{background:#fff;color:var(--bg);border:1px solid var(--rule)} .s4 .ar{background:var(--gold);color:#fff}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.stats{grid-template-columns:1fr} .stat{min-height:auto}}
+
+/* EMPIEZA POR AQUI */
+.start{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--rule);border-left:4px solid var(--gold);padding:16px 22px;border-radius:4px;margin-bottom:30px}
+.start strong{color:var(--bg);font-size:15px;white-space:nowrap}
+.start p{font-size:14px;color:var(--mut);line-height:1.5}
+@media(max-width:640px){.start{flex-direction:column;align-items:flex-start;gap:6px}}
+
 /* VIDEO PRINCIPAL */
 .hero-video{position:relative;aspect-ratio:16/9;max-width:880px;margin:0 auto;
   border:2px solid var(--gold);border-radius:5px;overflow:hidden;background:#000;
@@ -49,16 +82,19 @@ h2{font-family:var(--ff);font-weight:700;color:var(--bg);font-size:clamp(23px,2.
 @media(max-width:520px){.grid{grid-template-columns:1fr}}
 .card{outline:none}
 .card h3{font-family:var(--ff);font-size:15.5px;font-weight:700;color:var(--bg);margin:14px 0 0;line-height:1.3}
-.flip{position:relative;aspect-ratio:3/2.3;perspective:1100px}
+.flip{position:relative;aspect-ratio:3/2.6;perspective:1100px}
 .face{position:absolute;inset:0;border-radius:4px;overflow:hidden;backface-visibility:hidden;
   transition:transform .62s cubic-bezier(.4,.1,.2,1);border:1px solid rgba(192,138,46,.55)}
 .front{transform:rotateY(0deg);background:var(--bg)}
-.front img{width:100%;height:100%;object-fit:contain;display:block;background:#6B2D3E}
+.front img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block;background:#6B2D3E}
 .back{transform:rotateY(180deg);background:linear-gradient(150deg,#7B3547,#4A1927);
-  display:flex;flex-direction:column;justify-content:center;gap:10px;padding:13px 13px;color:#fff}
+  display:flex;flex-direction:column;justify-content:center;gap:9px;padding:13px 13px;color:#fff}
 .card:hover .front,.card:focus .front,.card.on .front{transform:rotateY(-180deg)}
 .card:hover .back,.card:focus .back,.card.on .back{transform:rotateY(0deg)}
-.back p{font-size:11.4px;line-height:1.42;color:#F3DFE5}
+.back .hk{font-size:11.8px;line-height:1.38;color:#fff;font-weight:700}
+.back ul{list-style:none;display:flex;flex-direction:column;gap:3px}
+.back li{font-size:10.8px;line-height:1.35;color:#F3DFE5;padding-left:12px;position:relative}
+.back li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;background:var(--gold-l);border-radius:1px}
 .btns{display:flex;flex-direction:column;gap:7px}
 .btns a{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:11.6px;font-weight:600;color:#fff;
   text-decoration:none;background:rgba(255,255,255,.12);border:1px solid rgba(224,174,85,.55);
@@ -144,11 +180,30 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
   </div>
 </header>
 
-<section>
+<section class="intro">
   <div class="wrap">
-    <div class="lead">
-      <p>Promovemos el desarrollo local a través de proyectos de vinculación con la comunidad que impulsan el emprendimiento, fortalecen capacidades y generan oportunidades sostenibles.</p>
-      <p>Acompañamos a emprendedores y emprendedoras en su crecimiento con capacitaciones, recursos y herramientas prácticas para que sus ideas se conviertan en realidades que transforman su entorno.</p>
+    <p class="kicker">001 &mdash; Vinculación con la comunidad</p>
+    <h2 class="big">Detrás de cada negocio hay <em>una persona</em> que un día decidió <span class="ul">arriesgarse</span>.</h2>
+    <p class="hook">Este espacio es para ella. Aquí están los cuatro talleres que la UIDE Business School dictó a emprendedores de la Manuela Sáenz: cómo definir tu negocio, cómo dejar huella, cómo usar las redes sin volverte loco y cómo lograr que quien te compró una vez, vuelva.</p>
+    <a class="cta" href="#material">Anímate a aprender y a crecer con la UIDE Business School <span class="b">&rarr;</span></a>
+
+    <div class="stats">
+      <a class="stat s1" href="#material"><span class="ar">&rarr;</span>
+        <span class="n">4</span>
+        <span class="t">Talleres completos, con su presentación y su video, listos para ver y descargar cuando quieras.</span>
+        <span class="s">Material didáctico</span></a>
+      <a class="stat s2" href="#videos"><span class="ar">&rarr;</span>
+        <span class="n">80/20</span>
+        <span class="t">De cada diez publicaciones, ocho deben aportar valor y solo dos vender. Así se gana la confianza en redes.</span>
+        <span class="s">Taller 03 · Marketing digital</span></a>
+      <a class="stat s3" href="#videos"><span class="ar">&rarr;</span>
+        <span class="n">5x</span>
+        <span class="t">Conseguir un cliente nuevo cuesta hasta cinco veces más que mantener a uno que ya te compró.</span>
+        <span class="s">Taller 04 · Gana clientes</span></a>
+      <a class="stat s4" href="#material"><span class="ar">&rarr;</span>
+        <span class="n">4</span>
+        <span class="t">Preguntas que debes poder responder antes de vender: qué ofreces, a quién, por qué te elegirían y qué debes mejorar.</span>
+        <span class="s">Taller 01 · Define tu negocio</span></a>
     </div>
   </div>
 </section>
@@ -165,9 +220,11 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
   </div>
 </section>
 
-<section style="padding-top:14px">
+<section id="material" style="padding-top:14px">
   <div class="band"><h2>Material didáctico</h2></div>
-  <div class="wrap"><div class="grid">
+  <div class="wrap">
+    <div class="start"><strong>¿Primera vez aquí?</strong><p>Sigue el orden 01 a 04. Cada taller se apoya en el anterior: primero define tu negocio, luego construye tu marca, después comunica y al final haz que vuelvan. Pasa el cursor sobre cada tarjeta para ver qué te llevas.</p></div>
+    <div class="grid">
       <article class="card" tabindex="0">
         <div class="flip">
           <div class="face front">
@@ -175,7 +232,8 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
             <span class="hint">Pasa el cursor</span>
           </div>
           <div class="face back">
-            <p>Guía práctica para definir la propuesta de valor de un negocio, reconocer al cliente ideal, analizar la competencia y fortalecer la mentalidad emprendedora.</p>
+            <p class="hk">¿Qué vendes, a quién y por qué te elegirían? Si dudas en alguna, empieza por aquí.</p>
+            <ul><li>Tu propuesta de valor en una frase</li><li>Quién es tu cliente ideal</li><li>Qué hace distinto a tu negocio</li></ul>
             <div class="btns">
               <a href="pdf/1-define-tu-negocio.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#C08A2E" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver la presentación</span></a>
             </div>
@@ -190,7 +248,8 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
             <span class="hint">Pasa el cursor</span>
           </div>
           <div class="face back">
-            <p>Material orientado a construir negocios con propósito, capaces de ofrecer experiencias memorables y establecer relaciones duraderas con sus clientes.</p>
+            <p class="hk">Los clientes no recuerdan un logo, recuerdan cómo los hiciste sentir.</p>
+            <ul><li>Una marca con propósito</li><li>Experiencias que se recomiendan solas</li><li>Relaciones que duran</li></ul>
             <div class="btns">
               <a href="pdf/2-negocios-que-dejan-huella.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#C08A2E" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver la presentación</span></a>
             </div>
@@ -205,7 +264,8 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
             <span class="hint">Pasa el cursor</span>
           </div>
           <div class="face back">
-            <p>Introducción práctica al uso de redes sociales, la creación de contenido y la atención digital para promocionar un negocio, atraer clientes y aumentar sus ventas.</p>
+            <p class="hk">No hay que estar en todas las redes, hay que estar donde está tu cliente.</p>
+            <ul><li>Qué publicar y cada cuánto</li><li>La regla 80/20 del contenido</li><li>Atender bien por WhatsApp</li></ul>
             <div class="btns">
               <a href="pdf/3-marketing-digital.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#C08A2E" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver la presentación</span></a>
             </div>
@@ -220,17 +280,19 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
             <span class="hint">Pasa el cursor</span>
           </div>
           <div class="face back">
-            <p>Capacitación sobre estrategias de venta y fidelización para atraer compradores, comprender sus necesidades y convertirlos en clientes frecuentes.</p>
+            <p class="hk">Vender una vez es fácil. Que vuelvan, ese es el negocio.</p>
+            <ul><li>Por qué se va un cliente</li><li>Cómo volverlo frecuente</li><li>Seguimiento sin ser pesado</li></ul>
             <div class="btns">
               <a href="pdf/4-gana-clientes.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#C08A2E" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span>Ver la presentación</span></a>
             </div>
           </div>
         </div>
         <h3>Gana clientes y hazlos volver</h3>
-      </article></div></div>
+      </article></div>
+  </div>
 </section>
 
-<section>
+<section id="videos">
   <div class="wrap">
     <div class="h-rule"><h2>Los talleres en video</h2></div>
     <p class="sublead">Las cuatro sesiones completas, tal como se dictaron a los emprendedores.</p>
@@ -238,19 +300,19 @@ footer p+p{margin-top:7px;font-size:12px;color:#C79BA8}
     <div class="frame"><iframe src="https://www.youtube.com/embed/LHLwJnWqQGk" title="Define tu negocio para vender mejor" loading="lazy"
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    <h3>Define tu negocio para vender mejor</h3><p>Cuatro preguntas que todo emprendedor debería poder responder antes de salir a vender: qué ofrece, a quién le sirve, por qué lo elegirían a él y qué necesita mejorar.</p></article><article class="vcard">
+    <h3>Define tu negocio para vender mejor</h3><p>La sesión completa: propuesta de valor, cliente ideal, competencia y mentalidad emprendedora, con ejemplos de negocios de la zona.</p></article><article class="vcard">
     <div class="frame"><iframe src="https://www.youtube.com/embed/WNaMESPCd4o" title="Negocios que dejan huella" loading="lazy"
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    <h3>Negocios que dejan huella</h3><p>Los clientes no recuerdan un logotipo, recuerdan cómo se sintieron. Sobre construir una marca que la gente quiera recomendar sin que se lo pidan.</p></article><article class="vcard">
+    <h3>Negocios que dejan huella</h3><p>Cómo construir una marca con propósito y una experiencia de compra que la gente recomiende sin que se lo pidan.</p></article><article class="vcard">
     <div class="frame"><iframe src="https://www.youtube.com/embed/icuEcZeUZ98" title="Marketing digital sencillo y efectivo" loading="lazy"
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    <h3>Marketing digital sencillo y efectivo</h3><p>No hace falta estar en todas las redes, hace falta estar donde está tu cliente. Qué publicar, cada cuánto y cómo responder a tiempo.</p></article><article class="vcard">
+    <h3>Marketing digital sencillo y efectivo</h3><p>Redes sociales, contenido, catálogos de WhatsApp y atención digital, explicados con casos reales de emprendedores.</p></article><article class="vcard">
     <div class="frame"><iframe src="https://www.youtube.com/embed/qZU6S-FPBjI" title="Gana clientes y hazlos volver" loading="lazy"
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    <h3>Gana clientes y hazlos volver</h3><p>Retener cuesta menos que salir a buscar. Fidelización, cliente frecuente y los errores que hacen perder a quien ya te eligió.</p></article></div>
+    <h3>Gana clientes y hazlos volver</h3><p>Estrategias de venta y fidelización: entender al cliente, atenderlo bien y convertirlo en cliente frecuente.</p></article></div>
   </div>
 </section>
 
